@@ -21,10 +21,18 @@ export class AlbumsComponent implements OnInit {
 
   getAlbums(): void {
     this.albumService.getAlbums()
-      .subscribe(albums => this.albums = albums['result']        );
+      .subscribe(albums => this.albums = albums['result'] );
   }
 
+  // console.log(this.albums)
 
+//   id: "8"
+//   title: "Velit ea magni fuga et natus id similique."
+//   user_id: "2004"
+//   _links:
+//   edit: {href: "https://gorest.co.in/public-api/albums/8"}
+//   self:
+//   href: "https://gorest.co.in/public-api/albums/8"
 
 
 
