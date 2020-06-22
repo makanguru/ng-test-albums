@@ -1,1 +1,9 @@
-<p>users works!</p>
+<h2>My Users</h2>
+<button mat-raised-button>Super material!</button>
+<ul class="users">
+  <li *ngFor="let user of users">
+      <a routerLink="/user/{{user.id}}">
+        <span class="badge">{{user.id}}&nbsp;</span>{{user.first_name}}&nbsp;{{user.last_name}}
+      </a>
+  </li>
+</ul>

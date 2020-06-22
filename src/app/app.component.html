@@ -1,1 +1,14 @@
-<h1>Test ......</h1>
+<h1> {{title}}</h1>
+<div>
+  <label>name:
+    <input [(ngModel)]="this.searchTxt" placeholder="search"/>
+  </label>
+</div>
+
+<nav>
+  <a routerLink="/users">Users</a> &nbsp;
+  <a routerLink="/albums">Albums</a>
+</nav>
+
+<router-outlet></router-outlet>
+
