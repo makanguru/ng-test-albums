@@ -11,7 +11,7 @@ import { AlbumService } from '../services/album.service';
 })
 export class AlbumsComponent implements OnInit {
 
-  albums: Album[] = [];
+  albums: Album[];
 
   constructor(private albumService: AlbumService) { }
 
@@ -21,8 +21,10 @@ export class AlbumsComponent implements OnInit {
 
   getAlbums(): void {
     this.albumService.getAlbums()
-      .subscribe(albums => this.albums = albums);
+      .subscribe(albums => this.albums = albums['result']        );
   }
+
+
 
 
 

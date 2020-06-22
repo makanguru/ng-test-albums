@@ -17,11 +17,9 @@ export class UserService {
   private suffixToken = environment.suffixToken;
 
   constructor( private http: HttpClient ) { }
-
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(`${this.usersUrl}?${this.suffixToken}`)
       .pipe(catchError(this.handleError<User[]>('getUsers', [])))
-
   }
 
   /**
@@ -47,3 +45,6 @@ export class UserService {
   }
 
 }
+
+
+

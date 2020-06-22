@@ -3,10 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user';
 import { UserService } from '../services/user.service';
 
-
-
-
-
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
@@ -14,7 +10,6 @@ import { UserService } from '../services/user.service';
 })
 export class UsersComponent implements OnInit {
 
-  rowColIndex: number;
 
   displayedColumns: string[] = ['id', 'first_name', 'last_name'];
 
@@ -26,10 +21,10 @@ export class UsersComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    this.getHeroes();
+    this.getUsers();
   }
 
-  getHeroes(): void {
+  getUsers(): void {
     this.userService.getUsers().subscribe(res => {
        this.users = res['result'];
        this.dataSource = this.users;

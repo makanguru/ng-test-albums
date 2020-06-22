@@ -8,19 +8,9 @@
 </div>
 <hr>
 
-<!-- <button mat-raised-button>Super material!</button> -->
-
-<!-- <ul class="users">
-  <li *ngFor="let user of users">
-      <a routerLink="/user/{{user.id}}">
-        <span class="badge">{{user.id}}&nbsp;</span>{{user.first_name}}&nbsp;{{user.last_name}}
-      </a>
-  </li>
-</ul> -->
 
 <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-  <!-- Position Column -->
-
+  <!-- id Column -->
   <ng-container matColumnDef="id">
     <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
     <mat-cell *matCellDef="let element">
@@ -30,13 +20,13 @@
      </mat-cell>
   </ng-container>
 
-  <!-- Name Column -->
+  <!-- first Name Column -->
   <ng-container matColumnDef="first_name">
     <mat-header-cell *matHeaderCellDef> First Name </mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.first_name}} </mat-cell>
   </ng-container>
 
-  <!-- Symbol Column -->
+  <!-- last name Column -->
   <ng-container matColumnDef="last_name">
     <mat-header-cell *matHeaderCellDef> Last Name </mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.last_name}} </mat-cell>
