@@ -9,6 +9,6 @@ export class AppComponent {
 
   title = 'Users list';
 
-  searchTxt = '';
+
 
 }

@@ -1,0 +1,4 @@
+.users-wrap {
+  display: flex;
+  flex-direction: row;
+}

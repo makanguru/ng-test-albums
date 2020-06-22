@@ -12,6 +12,7 @@ import { UserService } from '../services/user.service';
 export class UsersComponent implements OnInit {
 
   users: User[];
+  searchTxt = '';
 
   constructor(private userService: UserService) { }
 

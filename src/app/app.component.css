@@ -1,0 +1,11 @@
+.mnv-main-wrap {
+  display: flex;
+  flex-direction: row;
+  max-width: 1024px;
+  margin: 0 auto;
+  background: grey;
+}
+
+.mnv-main-wrap nav a {
+  display: block;
+}
