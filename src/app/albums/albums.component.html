@@ -1,0 +1,9 @@
+<h3>List albums</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let album of albums" class="col-1-4">
+    <div class="module album">
+      <h4>{{album.title}}</h4>
+      <h4>{{album.photos}}</h4>
+    </div>
+  </a>
+</div>
