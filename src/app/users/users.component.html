@@ -1,9 +1,10 @@
 <div class="users-wrap">
-  <h2>Users list</h2>
+  <div>Users list</div>
   <div>
     <input [(ngModel)]="this.searchTxt" placeholder="search"/>
   </div>
 </div>
+<hr>
 <button mat-raised-button>Super material!</button>
 <ul class="users">
   <li *ngFor="let user of users">
