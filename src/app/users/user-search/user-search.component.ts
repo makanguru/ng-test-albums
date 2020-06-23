@@ -14,8 +14,8 @@ import { UserService } from '../../services/user.service';
 })
 export class UserSearchComponent implements OnInit {
 
-  users$: Observable<User[]>;
 
+  users: User[];
   private searchTerms = new Subject<string>();
 
   constructor(private userService: UserService) { }
@@ -28,7 +28,7 @@ export class UserSearchComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.users$ = this.searchTerms.pipe(
+    this.searchTerms.pipe(
       // wait 1 second after each keystroke before considering the term
       debounceTime(1000),
 
@@ -36,8 +36,12 @@ export class UserSearchComponent implements OnInit {
       distinctUntilChanged(),
 
       // switch to new search observable each time the term changes
-      switchMap((term: string) => this.userService.searchUsers(term)), );
+      switchMap((term: string) => this.userService.searchUsers(term))
+      ).subscribe(vl => this.users = vl['result'])
 
   }
+
+
+
 
 }

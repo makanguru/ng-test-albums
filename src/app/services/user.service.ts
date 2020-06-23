@@ -17,6 +17,7 @@ export class UserService {
   private suffixToken = environment.suffixToken;
 
   constructor( private http: HttpClient ) { }
+
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(`${this.usersUrl}?${this.suffixToken}`)
       .pipe(catchError(this.handleError<User[]>('getUsers', [])))
@@ -51,12 +52,7 @@ export class UserService {
       return of([]);
     }
 
-    console.log(11111111111, this.usersUrl, term, this.suffixToken)
-
     return this.http.get<User[]>(`${this.usersUrl}?first_name=${term}&${this.suffixToken}`).pipe(
-      tap(x => x.length ?
-         console.log(`found users matching "${term}"`) :
-         console.log(`no users matching "${term}"`)),
       catchError(this.handleError<User[]>('searchUsers', []))
     );
   }
