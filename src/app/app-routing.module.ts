@@ -8,10 +8,12 @@ import { AlbumItemComponent } from './albums/album-item/album-item.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/users', pathMatch: 'full'},
+  // { path: '', redirectTo: '/users', pathMatch: 'full'},
+  { path: '', redirectTo: '/', pathMatch: 'full'},
   { path: 'users', component: UsersComponent},
   { path: 'user/:id', component: UserItemComponent},
   { path: 'albums', component: AlbumsComponent},
+  //{ path: 'albums', loadChildren: './albums/album-routing.module#AlbumRoutingModule'},
   { path: 'album/:id', component: AlbumItemComponent}
 ];
 
