@@ -4,12 +4,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { UsersComponent } from './users/users.component';
 import { AlbumsComponent } from './albums/albums.component';
 import { UserItemComponent } from './users/user-item/user-item.component';
+import { AlbumItemComponent } from './albums/album-item/album-item.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/users', pathMatch: 'full'},
   { path: 'users', component: UsersComponent},
   { path: 'user/:id', component: UserItemComponent},
-  { path: 'albums', component: AlbumsComponent}
+  { path: 'albums', component: AlbumsComponent},
+  { path: 'album/:id', component: AlbumItemComponent}
 ];
 
 @NgModule({

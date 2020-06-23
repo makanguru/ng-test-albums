@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
 import { UserItemComponent } from './users/user-item/user-item.component';
 import { AlbumsComponent } from './albums/albums.component';
+import { AlbumItemComponent } from './albums/album-item/album-item.component';
 
 
 
@@ -20,7 +21,8 @@ import { AlbumsComponent } from './albums/albums.component';
     AppComponent,
     UsersComponent,
     UserItemComponent,
-    AlbumsComponent
+    AlbumsComponent,
+    AlbumItemComponent
   ],
   imports: [
     BrowserModule,
