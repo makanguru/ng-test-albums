@@ -1,8 +1,15 @@
 <div *ngIf="album">
   <h2> Albums > Album {{album.id}} </h2>
-  <div class="wrap-users-albums">
-    <h5><p class="album"> Title:&nbsp;</p> <p class='for-bord'> {{album.title}}</p>&nbsp;</h5>
+  <div class="wrap-albums">
+    <h5><p class="album"> Title:&nbsp;</p> <p class='for-bor'> {{album.title}}</p>&nbsp;</h5>
   </div>
+
+  <mat-grid-list cols="4" rowHeight="2:1">
+    <mat-grid-tile *ngFor="let photo of photos">
+       {{photo}} <img src="{{photo}}" alt="{{photo}}">
+    </mat-grid-tile>
+  </mat-grid-list>
+
 
 </div>
 
