@@ -13,6 +13,7 @@ import { UsersComponent } from './users/users.component';
 import { UserItemComponent } from './users/user-item/user-item.component';
 import { AlbumsComponent } from './albums/albums.component';
 import { AlbumItemComponent } from './albums/album-item/album-item.component';
+import { UserSearchComponent } from './users/user-search/user-search.component';
 
 
 
@@ -23,7 +24,8 @@ import { AlbumItemComponent } from './albums/album-item/album-item.component';
     UsersComponent,
     UserItemComponent,
     AlbumsComponent,
-    AlbumItemComponent
+    AlbumItemComponent,
+    UserSearchComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of} from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 
 import { environment } from '../../environments/environment';
 
@@ -41,8 +41,26 @@ export class UserService {
     const url = `${this.usersUrl}/${id}?${this.suffixToken}`;
     return this.http.get<User>(url).pipe(
       catchError(this.handleError<User>(`getUser id=${id}` ))
-    )
+    );
   }
+
+  /* GET users whose name contains search term */
+  searchUsers(term: string): Observable<User[]> {
+    if (!term.trim()) {
+      // if not search term, return empty User array.
+      return of([]);
+    }
+
+    console.log(11111111111, this.usersUrl, term, this.suffixToken)
+
+    return this.http.get<User[]>(`${this.usersUrl}?first_name=${term}&${this.suffixToken}`).pipe(
+      tap(x => x.length ?
+         console.log(`found users matching "${term}"`) :
+         console.log(`no users matching "${term}"`)),
+      catchError(this.handleError<User[]>('searchUsers', []))
+    );
+  }
+
 
 }
 

@@ -1,10 +1,7 @@
 <div class="users-wrap">
   <div class='ussers-title'><br>Users list</div>
-  <mat-form-field>
-    <mat-label>Search</mat-label>
-    <input [(ngModel)]="this.searchTxt" matInput class="example-right-align" />
-    <span matPrefix ><mat-icon>{{'search'}}</mat-icon></span>
-  </mat-form-field>
+  <app-user-search></app-user-search>
+
 </div>
 <hr>
 

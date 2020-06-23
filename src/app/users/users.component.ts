@@ -16,8 +16,6 @@ export class UsersComponent implements OnInit {
   users: User[];
   dataSource: User[];
 
-  searchTxt = '';
-
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
