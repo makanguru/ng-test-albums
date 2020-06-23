@@ -6,10 +6,9 @@
 
   <mat-grid-list cols="4" rowHeight="2:1">
     <mat-grid-tile *ngFor="let photo of photos">
-       {{photo}} <img src="{{photo}}" alt="{{photo}}">
+       {{photo['id']}} <img src="{{photo['thumbnail']}}" alt="{{photo['title']}}">
     </mat-grid-tile>
   </mat-grid-list>
-
 
 </div>
 

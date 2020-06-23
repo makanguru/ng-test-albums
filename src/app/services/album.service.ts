@@ -6,6 +6,7 @@ import { catchError } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 
 import { Album } from '../models/album';
+import { Photo } from '../models/photo';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,7 @@ export class AlbumService {
 
   private baseUrl = environment.baseUrl;
   private albumsUrl = this.baseUrl + '/albums';
+  private photosUrl = this.baseUrl + '/photos';
   private suffixToken = environment.suffixToken;
 
   constructor(private http: HttpClient) { }
@@ -52,6 +54,14 @@ export class AlbumService {
       catchError(this.handleError<Album>(`getAlbumOfUser id=${userid}` ))
     )
   }
+
+  getPhotosOfAlbum(albumid: number): Observable<Photo> {
+    const url = `${this.photosUrl}?album_id=${albumid}&${this.suffixToken}`;
+    return this.http.get<Photo>(url).pipe(
+      catchError(this.handleError<Photo>(`getAlbumOfUser id=${albumid}` ))
+    )
+  }
+
 
 
 

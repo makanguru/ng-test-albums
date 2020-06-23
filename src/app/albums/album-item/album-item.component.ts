@@ -20,7 +20,6 @@ export class AlbumItemComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.photos = [];
     this.getAlbum();
   }
 
@@ -28,13 +27,15 @@ export class AlbumItemComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     this.albumService.getAlbum(id)
       .subscribe( album => {
-        let r = album['result']["_links"];
         this.album = album['result'];
-        for (let key in r) {
-          this.photos.push(r[key]["href"]);
-        }
+        this.getPhotos(this.album.id)
+      });
+  }
 
-
+  getPhotos(albumid): void {
+    this.albumService.getPhotosOfAlbum(albumid)
+      .subscribe(photos => {
+        this.photos = photos['result'];
       });
   }
 
