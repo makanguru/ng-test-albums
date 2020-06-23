@@ -45,4 +45,15 @@ export class AlbumService {
       catchError(this.handleError<Album>(`getAlbum id=${id}` ))
     )
   }
+
+  getAlbumsOfUser(userid: number): Observable<Album> {
+    const url = `${this.albumsUrl}?user_id=${userid}&${this.suffixToken}`;
+    console.log(111111111111, url);
+    return this.http.get<Album>(url).pipe(
+      catchError(this.handleError<Album>(`getAlbumOfUser id=${userid}` ))
+    )
+  }
+
+
+
 }
